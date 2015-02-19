@@ -1,0 +1,5 @@
+. ${srcdir}/emulparams/cgc32ppc.sh
+OUTPUT_FORMAT="cgc32-powerpcle"
+MAXPAGESIZE="CONSTANT (MAXPAGESIZE)"
+TEXT_START_ADDR=0x48040000
+
