@@ -1,0 +1,6 @@
+. ${srcdir}/emulparams/mn10200.sh
+OUTPUT_FORMAT="cgc32-mn10300"
+ARCH=mn10300
+TEMPLATE_NAME=cgc32
+unset EXTRA_EM_FILE
+GENERATE_SHLIB_SCRIPT=yes
