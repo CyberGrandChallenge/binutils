@@ -1,0 +1,17 @@
+Source: binutils-cgc-i386
+Section: devel
+Priority: extra
+Maintainer: Brian Caswell <bmc@lungetech.com>
+Build-Depends: debhelper (>= 7.0.50~), autotools-dev
+Standards-Version: 3.9.2
+Homepage: http://www.darpa.mil/cybergrandchallenge/
+
+Package: binutils-cgc-i386
+Architecture: any
+Depends: ${misc:Depends}
+# Built-Using: binutils (= ${binutils:Version})
+Description: Cross-binutils for CGC binaries
+ binutils-cgc provides a development and runtime enviornment for CGC
+ binaries using the gcc
+ .
+ This package provides the i386 CGC binutils used for building CGC binaries.
