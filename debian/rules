@@ -1,0 +1,11 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@ 
+
+override_dh_auto_configure:
+	./configure --prefix=/usr --disable-gold --target=i386-linux-cgc --enable-languages="c,c++" --disable-multixlib  --build=i386 --disable-libquadmath --disable-libquadmath-support --disable-libada --disable-libssp --disable-static-libjava --with-build-sysroot --with-sysroot
+
+override_dh_install:
+	rm -rvf $(CURDIR)/debian/binutils-cgc-i386/usr/share/locale/
+	rm -rvf $(CURDIR)/debian/binutils-cgc-i386/usr/share/info/
