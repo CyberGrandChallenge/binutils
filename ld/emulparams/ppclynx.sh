@@ -1,0 +1,23 @@
+SCRIPT_NAME=cgc
+OUTPUT_FORMAT="cgc32-powerpc"
+NO_REL_RELOCS=yes
+TEXT_BASE=0x00002000
+DYN_TEXT_BASE=0x00400000
+TEXT_START_ADDR="(DEFINED(_DYNAMIC) ? ${DYN_TEXT_BASE} : ${TEXT_BASE})"
+MAXPAGESIZE="CONSTANT (MAXPAGESIZE)"
+case ${LD_FLAG} in
+    n|N)	TEXT_START_ADDR=0x1000 ;;
+esac
+ARCH=powerpc
+MACHINE=
+TEMPLATE_NAME=cgc32
+GENERATE_SHLIB_SCRIPT=yes
+CGC_INTERPRETER_NAME=\"/usr/lib/ld.so.1\"
+
+# Leave room of SIZEOF_HEADERS before text.
+EMBEDDED=
+# PLT on PowerPC is generated at run-time.
+BSS_PLT=
+OTHER_READWRITE_SECTIONS="
+  .got1         ${RELOCATING-0} : { *(.got1) }
+  .got2         ${RELOCATING-0} : { *(.got2) }"
