@@ -1,0 +1,4 @@
+. ${srcdir}/emulparams/m68kcgc.sh
+TEXT_START_ADDR=0x2000
+TARGET_PAGE_SIZE=0x2000
+MACHINE=
